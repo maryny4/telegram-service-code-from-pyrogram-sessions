@@ -75,5 +75,3 @@ Login code: 12345
 This project is open-source under the MIT License.
 
 ---
-
-Это описание включает обновлённые параметры `api_id` и `api_hash`, а также пример вывода для сообщений с кодами Telegram.
