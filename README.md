@@ -36,7 +36,7 @@ These values are required for the Pyrogram clients to interact with Telegram's A
 When the script successfully retrieves a Telegram login code, it will display output like this:
 
 ```
-Код 23213 для номера 573225883230 сохранен в файл codes\573225883230.code
+Code 23213 for the number 573225883230 saved in file codes\573225883230.code
 ```
 
 ## Folder Structure
