@@ -1,5 +1,3 @@
-Вот обновлённый README с новыми параметрами и примером вывода:
-
 ---
 
 # Telegram Authorization Code Fetcher
