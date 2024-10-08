@@ -23,15 +23,15 @@ async def run_client(session_name):
 
     @app.on_message(filters.user(777000))
     def handle_message_from_user(client, message):
-        # Ищем код с помощью регулярного выражения
+        # Searching for the code using a regular expression
         code_match = re.search(r'Login code: (\d+)', message.text)
         if code_match:
             code = code_match.group(1)
-            phone_number = os.path.basename(session_name)  # Получаем имя сессии (номер телефона)
+            phone_number = os.path.basename(session_name)  # Extracting session name (phone number)
             code_file = os.path.join(codes_folder, f"{phone_number}.code")
             with open(code_file, "w") as file:
                 file.write(code)
-            print(f"Код {code} для номера {phone_number} сохранен в файл {code_file}")
+            print(f"Code {code} for the number {phone_number} saved in file {code_file}")
 
     try:
         await app.start()
@@ -54,7 +54,7 @@ async def main():
 
     for session_file in session_files:
         if session_file.endswith('.session'):
-            session_name = os.path.splitext(os.path.join(sessions_folder, session_file))[0]  # Убираем только расширение
+            session_name = os.path.splitext(os.path.join(sessions_folder, session_file))[0]  # Remove only the extension
             tasks.append(run_client(session_name))
 
     await asyncio.gather(*tasks)
@@ -63,7 +63,7 @@ async def main():
 
     await stop_clients()
 
-    print(f"Запущено клиентов: {len(clients)}")
+    print(f"Clients started: {len(clients)}")
 
 if __name__ == "__main__":
     asyncio.run(main())
